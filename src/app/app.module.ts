@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { VehicleComponent } from './components/vehicle/vehicle.component';
-import { VehicleDisplayComponent } from './vehicle-display/vehicle-display.component';
+import { VehicleDisplayComponent } from './components/vehicle-display/vehicle-display.component';
 
 const routes:Routes = [
 ]
