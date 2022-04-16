@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-header">
+    <div class="container-fluid">
+      <a class="navbar-brand" >{{title}}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              City
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let city of cities"><a (click)="filterCity(city)"  class="dropdown-item" >{{city}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Make
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let make of makes"><a class="dropdown-item" >{{make}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Price Range
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let price_range of price_ranges"><a class="dropdown-item" >{{price_range}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Year
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let year of years"><a class="dropdown-item" >{{year}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mileage
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let mileage of mileages"><a  class="dropdown-item" >{{mileage}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Color
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let color of colors"><a  class="dropdown-item" >{{color}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Vehicle Type
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let vehicle_type of vehicle_types"><a  class="dropdown-item" >{{vehicle_type}}</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Rating
+            </a>
+            <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li *ngFor="let rating of ratings"><a class="dropdown-item" >{{rating}}</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button (click)="changeData()" class="btn btn-primary">Filter</button>
+        <button class="btn btn-primary">Reset Filters</button>
+      </div>
+    </div>
+  </nav>

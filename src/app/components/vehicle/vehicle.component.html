@@ -1,0 +1,16 @@
+<div class="col">
+    <div class="card h-100">
+    <img src={{vehicle.image}} class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{vehicle.title}}</h5>
+        <p class="card-text"><strong>Location: </strong><span>{{vehicle.city}}</span></p>
+        <p class="card-text"><strong>Price: </strong><span>{{vehicle.price_rupees}} Rs</span></p>
+        <p class="card-text"><strong>Rating: </strong><span>{{vehicle.rating}}/5</span></p>
+    </div>
+    <button (click)="showDetails()" class="btn btn-primary" type="submit">Details</button>
+    <div class="card-footer">
+        <small class="text-muted">Last updated {{vehicle.last_updated}} mins ago</small>
+    </div>
+    </div>
+</div>
+

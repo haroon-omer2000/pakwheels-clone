@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngIf="!show_vehicle; else message" class="row row-cols-1 row-cols-md-4 g-4">
+        <button class="btn btn-primary" (click)="temp1()" >FilterTemp</button>
+        <app-vehicle *ngFor="let vehicle of vehicles" [vehicle]="vehicle" (showVehicle)="temp($event)" ></app-vehicle>
+    </div>
+    <ng-template #message>
+        <app-vehicle-display [vehicle_data] = "vehicle_data" ></app-vehicle-display>
+        <button class="btn btn-primary" (click)="back()">Back</button>
+    </ng-template>
+</div>
