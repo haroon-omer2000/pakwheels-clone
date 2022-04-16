@@ -38,7 +38,7 @@ export class VehiclesComponent implements OnInit {
   ngOnInit(): void {
     this.vehicleDataService.getVehicleData().subscribe((vehicles) => this.vehicles = vehicles);
 //    this.filterService.getFilter().subscribe((filter) => this.filterVehicles = filter)
-    console.log('constructor called', this.vehicles)
+    console.log('constructor caled', this.vehicles)
     
   }
 
