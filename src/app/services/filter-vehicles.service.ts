@@ -27,7 +27,7 @@ export class FilterVehiclesService {
 
   changeData (){
     console.log('Filter vehicle change data recived',this.filterVehicles)
-    this.vehicleService.changeVehicleData(this.filterVehicles);
+    this.vehicleService.changeVehicleData();
   }
 
 }

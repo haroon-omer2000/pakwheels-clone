@@ -19,7 +19,7 @@
               Make
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let make of makes"><a class="dropdown-item" >{{make}}</a></li>
+              <li *ngFor="let make of makes"><a (click)="filterMake(make)" class="dropdown-item" >{{make}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -27,7 +27,7 @@
               Price Range
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let price_range of price_ranges"><a class="dropdown-item" >{{price_range}}</a></li>
+              <li *ngFor="let price_range of price_ranges"><a (click)="filterPrice(price_range)" class="dropdown-item" >{{price_range}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -35,7 +35,7 @@
               Year
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let year of years"><a class="dropdown-item" >{{year}}</a></li>
+              <li *ngFor="let year of years"><a (click)="filterYear(year)" class="dropdown-item" >{{year}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -43,7 +43,7 @@
               Mileage
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let mileage of mileages"><a  class="dropdown-item" >{{mileage}}</a></li>
+              <li *ngFor="let mileage of mileages"><a (click)="filterMileage(mileage)" class="dropdown-item" >{{mileage}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -51,7 +51,7 @@
               Color
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let color of colors"><a  class="dropdown-item" >{{color}}</a></li>
+              <li *ngFor="let color of colors"><a  (click)="filterColor(color)" class="dropdown-item" >{{color}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -59,7 +59,7 @@
               Vehicle Type
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let vehicle_type of vehicle_types"><a  class="dropdown-item" >{{vehicle_type}}</a></li>
+              <li *ngFor="let vehicle_type of vehicle_types"><a (click)="filterVehicleType(vehicle_type)" class="dropdown-item" >{{vehicle_type}}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -67,12 +67,10 @@
               Rating
             </a>
             <ul  class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li *ngFor="let rating of ratings"><a class="dropdown-item" >{{rating}}</a></li>
+              <li *ngFor="let rating of ratings"><a (click)="filterRating(rating)" class="dropdown-item" >{{rating}}</a></li>
             </ul>
           </li>
         </ul>
-        <button (click)="changeData()" class="btn btn-primary">Filter</button>
-        <button class="btn btn-primary">Reset Filters</button>
       </div>
     </div>
   </nav>

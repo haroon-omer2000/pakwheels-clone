@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, NgModule} from '@angular/core';
 import { VehicledataService } from 'src/app/services/vehicledata.service';
 import { Vehicle } from 'src/app/vehicle';
 import { filterObject } from 'src/app/filterInterface';
@@ -7,10 +7,11 @@ import { filterObject } from 'src/app/filterInterface';
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',
   styleUrls: ['./vehicles.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class VehiclesComponent implements OnInit {
-  vehicles: Vehicle[] = [];
+  @Input() vehicles: Vehicle[] = [];
   show_vehicle: boolean = false;
   vehicle_data: Vehicle = {
         city: '',
@@ -30,40 +31,35 @@ export class VehiclesComponent implements OnInit {
         seller_email: '',
         seller_comments: '',
   };
-  filterVehicles: filterObject = {"dummy":"dummy"};
 
   constructor(private vehicleDataService: VehicledataService ) { 
   }
 
   ngOnInit(): void {
-    this.vehicleDataService.getVehicleData().subscribe((vehicles) => this.vehicles = vehicles);
-//    this.filterService.getFilter().subscribe((filter) => this.filterVehicles = filter)
-    console.log('constructor caled', this.vehicles)
-    
+    this.vehicleDataService.getVehicleData().subscribe((vehicles) => this.vehicles = vehicles);   
   }
 
   back(){
     this.show_vehicle = false;
   }
 
-  temp($event: Vehicle){
+  show($event: Vehicle){
     this.show_vehicle = true;
     this.vehicle_data = $event;
   }
+  
+  changeVehicles(){
+    this.vehicleDataService.getVehicleData().subscribe((vehicles) => {this.vehicles = vehicles;});    
+  }
 
-  temp1(){
-    //this.filterService.getMessage().subscribe((message) => this.message = message)
-    //console.log('aaaaaahh',this.message)
-    this.vehicleDataService.getVehicleData().subscribe((vehicles) => {this.vehicles = vehicles; console.log(vehicles,'chand par hun')});
-    console.log('idhr agay',this.vehicles);
-    // console.log(this.filterVehicles);
-    // if (this.filterVehicles["dummy"]!="dummy") {
-    //   var filteredVehicles = this.vehicles.filter( (el) => {
-    //   return el.city == this.filterVehicles['City'];
-    //   });
-    //   this.vehicles = filteredVehicles;
-    //   console.log(filteredVehicles,'dddd');
-    // }
+  changeData(){
+    this.vehicleDataService.changeVehicleData();
+    this.changeVehicles();
+  }
+
+  resetFilters(){
+    this.vehicleDataService.resetFilters();
+    this.changeVehicles();
   }
 
 }

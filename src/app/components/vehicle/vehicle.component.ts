@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Vehicle } from 'src/app/vehicle';
 
-
 @Component({
   selector: 'app-vehicle',
   templateUrl: './vehicle.component.html',

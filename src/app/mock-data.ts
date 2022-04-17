@@ -15,7 +15,6 @@ export const VEHICLEDATA: Vehicle[] = [
         image: '../../assets/ambulance1.jpg',
         transmission: 'Manual', // automatice or manual etc
         registered_in: 'Karachi',
-        
         last_updated: 10,
         seller_contact: '03315684327',
         seller_email: 'seller@gmail.com',
@@ -172,9 +171,7 @@ export const VEHICLEDATA: Vehicle[] = [
         seller_comments: 'Condition is A1. Pls Buy :(',
 
     },
-    {
-        
-        
+    {   
         city: 'Faisalabad',
         make: 'Kia',
         price_rupees: 15000000,

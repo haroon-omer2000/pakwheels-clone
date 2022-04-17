@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { VehicleDisplayComponent } from './components/vehicle-display/vehicle-display.component';
+import { CommonModule } from '@angular/common';
+
 
 const routes:Routes = [
 ]
@@ -18,12 +20,12 @@ const routes:Routes = [
     HeaderComponent,
     VehiclesComponent,
     VehicleComponent,
-    VehicleDisplayComponent
+    VehicleDisplayComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   exports:[RouterModule],
   providers: [],
